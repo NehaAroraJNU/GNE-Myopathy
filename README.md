@@ -10,3 +10,5 @@ Worldwide prevalence is estimated at 1/1,000,000, however it is more frequent in
 
 [Wiki](https://github.com/NehaAroraJNU/GNE-Myopathy/wiki)
 
+[Ongoing Research And Articles](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5930817/)
+
