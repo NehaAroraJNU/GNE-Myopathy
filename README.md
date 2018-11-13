@@ -8,5 +8,5 @@ Worldwide prevalence is estimated at 1/1,000,000, however it is more frequent in
 [Donate](http://gne-myopathy.org/donate)
 
 
-[Wiki](https://nehaarorajnu.github.io/GNE-Myopathy/wiki)
+[Wiki](https://nehaarorajnu.github.io/GNE-Myopathy/GNE-Myopathy.md)
 
