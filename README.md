@@ -5,7 +5,7 @@ GNE myopathy is a rare autosomal recessive distal myopathy characterized by earl
 
 Worldwide prevalence is estimated at 1/1,000,000, however it is more frequent in populations of Persian Jewish and Japanese ethnicity.
 
-[Donate](http://gne-myopathy.org/donate)
+[Donate](paypal.me/nobledonate)
 
 
 [Wiki](https://github.com/NehaAroraJNU/GNE-Myopathy/wiki)
