@@ -1,1 +1,63 @@
+library('keras')
+library('tensorflow')
+library('devtools') 
+library('EBImage')
+setwd('C:\Users\vikas\Desktop\footdrop')
+pics<-c('f1.jpg','f2.jpg','f3.jpg','f4.jpg','f5.jpg','f6.jpg','nf1.jpg','nf2.jpg','nf3.jpg','nf4.jpg','nf5.jpg','nf6.jpg')
+mypics<-list()
+for(i in 1:12){
+ mypics[[i]]<-readImage(pics[i])
+ }
+mypics[[1]]
+#Resize the pic
+for(i in 1:12){mypics[[i]]<-resize(mypics[[i]],28,28)}
+str(mypics[[1]])
+#Reshape of Images
+for(i in 1:12){mypics[[i]]<-array_reshape(mypics[[i]],c(28,28,3)}
+
+for(i in 1:12){mypics[[i]]<-array_reshape(mypics[[i]],c(28,28,3))}
+
+str(mypics)
+#Training the model
+trainx<-NULL
+for(i in 1:5){trainx<-rbind(trainx<-rbind(trainx,mypics[[i]]))}
+str(trainx)
+ #num [1:5, 1:2352] 0.0457 0.3059 0.8267 0.5494 0.5266 ...
+for(i in 7:11){trainx<-rbind(trainx<-rbind(trainx,mypics[[i]]))}
+str(trainx)
+ num [1:10, 1:2352] 0.0457 0.3059 0.8267 0.5494 0.5266 ...
+testx<-rbind(mypics[[6]],mypics[[12]])
+trainy<-c(0,0,0,0,0,1,1,1,1,1)
+testy<-c(0,1)
+#One hot encoding
+trainLabels<-to_categorical(trainy)
+#creating the model
+model<-keras_model_sequential()
+testlables<-to_categorical(testy)
+
+#model
+model<-kera_model_sequential()
+
+model %>% layer_dense(units=256,activation = 'relu' , input_shape=c(2352)) %>%
++ layer_dense(units=256,activation = 'relu') %>%
++ layer_dense(units=2,activation = 'softmax')
+
+summary(model)
+
+#compile
+model %>% complie(loss='binary_crossentropy' , optimizer = optimizer_rmsprop(),metrics=c('accuracy'))
+ #fitr model
+ history<-model %>% fit(trainx , trainLables , epochs=30 , batch_size=32 , validation_split=0.2)
+
+plot(history)
+#Evaluate  and predict the model
+model %>% evaluate(trainx , trainlables)
+
+pred<- model %>% predict_classes(trainx)
+
+table(predicted = pred , Actual = trainy)
+#probability
+ prob<- model %>% predict_proba(trainx)
+#confusion matrix
+table(predicted = pred , Actual = trainy)
 
